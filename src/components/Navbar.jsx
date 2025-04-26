@@ -8,7 +8,7 @@ function Navbar() {
       <h1 className="text-xl font-bold hover:text-orange-700 transition-colors"><a href="#">Louise´s Pet Accessories</a></h1>
 
       {/* Desktop menu */}
-      <ul className="hidden md:flex gap-6">
+      <ul className="hidden lg:flex gap-6">
         <li><a className="hover:text-orange-700 transition-colors" href="#">Dogs</a></li>
         <li><a className="hover:text-orange-700 transition-colors" href="#">Cats</a></li>
         <li><a className="hover:text-orange-700 transition-colors" href="#">Birds</a></li>
@@ -18,7 +18,7 @@ function Navbar() {
 
       {/* Mobile Hamburger menu */}
       <button
-        className="md:hidden"
+        className="lg:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
       >
       ☰
@@ -26,7 +26,7 @@ function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <ul className="absolute top-16 left-0 w-full bg-yellow-500 flex flex-col items-center gap-4 py-4 md:hidden">
+        <ul className="absolute top-16 left-0 w-full bg-yellow-500 flex flex-col items-center gap-4 py-4 lg:hidden">
           <li><a className="hover:text-orange-700 transition-colors" href="#">Dogs</a></li>
           <li><a className="hover:text-orange-700 transition-colors" href="#">Cats</a></li>
           <li><a className="hover:text-orange-700 transition-colors" href="#">Birds</a></li>
