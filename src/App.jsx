@@ -1,15 +1,17 @@
 import './App.css'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Categories from './components/Categories';
+import ProductsPage from './pages/ProductsPage';
 
 function App() {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <Router>
       <Navbar />
-      <Hero />
-      <Categories />
-    </div>
+      <Routes>
+        <Route path="/products/:category" element={<ProductsPage />} />
+        <Route  />
+    </Routes>
+  </Router>
   );
 }
 
