@@ -1,17 +1,18 @@
 import './App.css'
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/louise-pet-accessories">
       <Navbar />
       <Routes>
-        <Route path="/products/:category" element={<ProductsPage />} />
-        <Route  />
+        <Route path= "/" element={<HomePage />} />
+        <Route path="/:category" element={<ProductsPage />} />
     </Routes>
-  </Router>
+    </BrowserRouter>
   );
 }
 
