@@ -6,7 +6,10 @@ function Hero() {
       <button onClick={() => 
         document.getElementById('categories')?.scrollIntoView({behavior: 'smooth'})
       }
-       className="bg-yellow-500 text-black px-6 py-3 rounded-lg text-lg hover-bg-orange-500 transition-colors">Shop now</button>
+       className="bg-yellow-500 text-black px-6 py-3 rounded-lg text-lg hover:bg-orange-500 transition-colors"
+       >
+      Shop now
+      </button>
     </section>
   );
 }

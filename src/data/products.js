@@ -4,7 +4,7 @@ const products = [
     category: 'dogs',
     name: 'Chew Toy',
     price: 9.99,
-    image: '/images/chew-toy.jpg',
+    image: '../assets/images/chew-toy.png', #TODO: fix path
   },
   {
     id: 2,
