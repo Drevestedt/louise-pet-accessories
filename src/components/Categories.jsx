@@ -1,19 +1,27 @@
 import { Link } from "react-router-dom";
 
 function Categories() {
-  const categories = ["Dogs", "Cats", "Birds", "Fish", "Rodents"]
+  const categoryData = [
+    { name: "Dog", emoji: "🐶" },
+    { name: "Cat", emoji: "🐱" },
+    { name: "Bird", emoji: "🐦" },
+    { name: "Fish", emoji: "🐟" },
+    { name: "Rodents", emoji: "🐹" }
+  ]
 
   return(
-    <section className="py-12 bg-gray-100 text-center">
+    <section className="py-12 bg-gradient-to-b from-gray-50 to-gray-100 text-center">
       <h2 className="text-3xl font-bold mb-8 text-black">Shop by Category</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-6">
-        {categories.map((category) => (
+        {categoryData.map(( { name, emoji }) => (
           <Link
-            key={category}
-            to={`/${category.toLowerCase()}`}
-            className="bg-yellow-300 text-black rounded-lg p-6 hover:bg-yellow-400 cursor-pointer transition-colors"
+            key={name}
+            to={`/${name.toLowerCase()}`}
+            className="bg-yellow-300 text-black rounded-lg p-6 hover:bg-yellow-400 cursor-pointer transition duration-300 shadow-md
+                        hover:shadow-xl hover:scale-105 transform flex flex-col items-center justify-center gap-2"
           >
-            {category}
+            <span className="text-3x1">{emoji}</span>
+            <span className="text-lg font-semibold">{name}</span>
           </Link>
         ))}
       </div>

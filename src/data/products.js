@@ -1,24 +1,28 @@
+import chewToyImg from '../assets/images/chew-toy.png';
+import dogFoodImg from '../assets/images/dog_food.png';
+import rawHideBoneImg from '../assets/images/rawhide_bone.png';
+
 const products = [
   {
     id: 1,
     category: 'dogs',
     name: 'Chew Toy',
     price: 9.99,
-    image: '../assets/images/chew-toy.png', #TODO: fix path
+    image: chewToyImg,
   },
   {
     id: 2,
     category: 'dogs',
     name: 'Food',
     price: 39.99,
-    image: '/images/food.jpg',
+    image: dogFoodImg,
   },
   {
     id: 3,
     category: 'dogs',
     name: 'Raw Hide Bone',
     price: 14.99,
-    image: '/images/raw-hide-bone.jpg',
+    image: rawHideBoneImg,
   },
   /*{
     id: 3,
