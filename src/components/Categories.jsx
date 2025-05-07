@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Categories() {
   const categoryData = [
-    { name: "Dog", emoji: "🐶" },
+    { name: "Dogs", emoji: "🐶" },
     { name: "Cat", emoji: "🐱" },
     { name: "Bird", emoji: "🐦" },
     { name: "Fish", emoji: "🐟" },
@@ -17,10 +17,10 @@ function Categories() {
           <Link
             key={name}
             to={`/${name.toLowerCase()}`}
-            className="bg-yellow-300 text-black rounded-lg p-6 hover:bg-yellow-400 cursor-pointer transition duration-300 shadow-md
+            className="bg-yellow-300 text-black rounded-lg py-10 hover:bg-yellow-400 cursor-pointer transition duration-300 shadow-md
                         hover:shadow-xl hover:scale-105 transform flex flex-col items-center justify-center gap-2"
           >
-            <span className="text-3x1">{emoji}</span>
+            <span className="text-6xl">{emoji}</span>
             <span className="text-lg font-semibold">{name}</span>
           </Link>
         ))}
