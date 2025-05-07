@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 function Categories() {
   const categoryData = [
     { name: "Dogs", emoji: "🐶" },
-    { name: "Cat", emoji: "🐱" },
-    { name: "Bird", emoji: "🐦" },
+    { name: "Cats", emoji: "🐱" },
+    { name: "Birds", emoji: "🐦" },
     { name: "Fish", emoji: "🐟" },
     { name: "Rodents", emoji: "🐹" }
   ]
 
   return(
-    <section className="py-12 bg-gradient-to-b from-gray-50 to-gray-100 text-center">
+    <section className="py-12 bg-gradient-to-b from-gray-50 to-gray-100 text-center"> #TODO: Look at changing the BG color
       <h2 className="text-3xl font-bold mb-8 text-black">Shop by Category</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-6">
         {categoryData.map(( { name, emoji }) => (
