@@ -1,3 +1,5 @@
+# === Frontend (React) ===
+
 # Logs
 logs
 *.log
@@ -7,18 +9,48 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local environment files
 *.local
 
-# Editor directories and files
-.vscode/*
+# Editor settings
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# === Backend (Django) ===
+
+# Python virtual environment
+venv/
+.pvenv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Django specific
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# OS files
+Thumbs.db
