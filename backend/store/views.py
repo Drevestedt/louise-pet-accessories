@@ -9,6 +9,7 @@ class ProductList(APIView):
       products = Products.objects.filter(category__iexact=category) #TODO: explain this line of code
     else:
       products = Products.objects.all()
+      
     serializer = ProductSerializer(products, many=True)
 
     return Response(serializer.data)
