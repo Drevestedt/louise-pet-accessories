@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'store',
 ]
 
@@ -117,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media' #TODO: Set up to serve media files in development
+MEDIA_ROOT = BASE_DIR / 'media' 
 
 STATIC_URL = 'static/'
 
