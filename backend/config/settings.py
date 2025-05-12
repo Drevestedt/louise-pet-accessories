@@ -11,7 +11,11 @@ SECRET_KEY = 'django-insecure-*edg#kbu32+6yisl8q7=fo8an4*zliv^%al^@%)_!az!5r3sfl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'louise-pet-accessories-6f8f8f04c94f.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost', 
+    'louise-pet-accessories-6f8f8f04c94f.herokuapp.com',
+    'drevestedt.github.io',
+]
 
 
 # Application definition
@@ -116,7 +120,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     # Frontend
-    "http://localhost:5173", # Dev Server
-
-    #TODO: Set up Production Server as well
+    "https://drevestedt.github.io",
 ]
