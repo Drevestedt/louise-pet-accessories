@@ -129,4 +129,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#TODO: Fortsätt lägga till CORS 
+CORS_ALLOWED_ORIGINS = [
+    # Frontend
+    "http://localhost:5173", # Dev Server
+
+    #TODO: Set up Production Server as well
+]
