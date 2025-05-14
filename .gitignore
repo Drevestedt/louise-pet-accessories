@@ -51,6 +51,7 @@ db.sqlite3
 media/
 staticfiles/
 local_settings.py
+env.py
 
 # OS files
 Thumbs.db
