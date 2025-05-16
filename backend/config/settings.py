@@ -1,15 +1,18 @@
 from pathlib import Path
 import os
+from decouple import config
 import dj_database_url
+
+print("DATABASE_URL =", os.environ.get("DATABASE_URL"))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*edg#kbu32+6yisl8q7=fo8an4*zliv^%al^@%)_!az!5r3sfl'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #TODO: 
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -75,12 +78,11 @@ if db_url and db_url.startswith('postgresql://'):
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
+        default=config('DATABASE_URL'),
         conn_max_age=600,
         ssl_require=True
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
