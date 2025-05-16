@@ -67,6 +67,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
+db_url = os.getenv('DATABASE_URL')
+
+# Workaround if dj-database-url requires 'postgres://' instead of 'postgresql://'
+if db_url and db_url.startswith('postgresql://'):
+    db_url = db_url.replace('postgresql://', 'postgres://', 1)
+
 DATABASES = {
     'default': dj_database_url.config(
         default=os.getenv('DATABASE_URL'),
