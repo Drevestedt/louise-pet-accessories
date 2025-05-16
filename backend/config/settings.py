@@ -3,7 +3,7 @@ import os
 from decouple import config
 import dj_database_url
 
-print("DATABASE_URL =", os.environ.get("DATABASE_URL"))
+print('DATABASE_URL:', config('DATABASE_URL'))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -70,11 +70,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
-db_url = os.getenv('DATABASE_URL')
 
 # Workaround if dj-database-url requires 'postgres://' instead of 'postgresql://'
-if db_url and db_url.startswith('postgresql://'):
-    db_url = db_url.replace('postgresql://', 'postgres://', 1)
+#if db_url and db_url.startswith('postgresql://'):
+#   db_url = db_url.replace('postgresql://', 'postgres://', 1)
 
 DATABASES = {
     'default': dj_database_url.config(
