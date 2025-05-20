@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 from decouple import config
 import dj_database_url
+from corsheaders.defaults import default_headers
 
 print('DATABASE_URL:', config('DATABASE_URL'))
 
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'store',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -68,13 +70,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+# AWS S3
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = ('louise-pet-store-static')
+AWS_S3_REGION_NAME = 'eu-north-1'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+
+# If Dev or Prod for media files
+if DEBUG:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+else:
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
 
 # Database
-
-# Workaround if dj-database-url requires 'postgres://' instead of 'postgresql://'
-#if db_url and db_url.startswith('postgresql://'):
-#   db_url = db_url.replace('postgresql://', 'postgres://', 1)
-
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL'),
@@ -114,15 +126,9 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+# Static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 STATIC_URL = 'static/'
 
 # Default primary key field type
@@ -130,7 +136,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_HEADERS = list(default_headers) + [
+    'content-disposition',
+]
+
+CORS_EXPOSE_HEADERS = [
+    'Content-type',
+    'Content-Disposition',
+]
 
 CORS_ALLOWED_ORIGINS = [
     # Development

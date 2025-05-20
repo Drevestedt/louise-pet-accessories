@@ -8,7 +8,7 @@ const ProductPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://louise-pet-accessories-6f8f8f04c94f.herokuapp.com/api/products/${category}`)
+    fetch(`http://127.0.0.1:8000/api/products/${category}`) // louise-pet-accessories-6f8f8f04c94f.herokuapp.com
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
