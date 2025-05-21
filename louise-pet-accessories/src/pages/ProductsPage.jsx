@@ -7,8 +7,10 @@ const ProductPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL.replace(/\/$/, '');
+
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/products/${category}`) // louise-pet-accessories-6f8f8f04c94f.herokuapp.com
+    fetch(`${API_BASE}/products/${category || ''}`) // louise-pet-accessories-6f8f8f04c94f.herokuapp.com
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -18,7 +20,7 @@ const ProductPage = () => {
         console.error("Error fetching products:", error);
         setLoading(false);
       });
-  }, [category]);
+  }, [category, API_BASE]);
 
   if (loading) return <p className="text-center mt-10">Loading...</p>;
 
