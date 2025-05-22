@@ -8,7 +8,7 @@ import ProductsPage from './pages/ProductsPage';
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      <BrowserRouter basename="/louise-pet-accessories">
+      <BrowserRouter basename={import.meta.env.MODE === 'production' ? "/louise-pet-accessories" : "/"}>
         <Navbar />
         <main className="flex-grow">
           <Routes>
