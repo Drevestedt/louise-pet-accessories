@@ -1,6 +1,7 @@
 import React from "react";
 
-const ProductCard = ({ product} ) => {
+const ProductCard = ( {product} ) => {
+  console.log("Image URL:", product.image);
   return (
     <div className="bg-zinc-900 border border-yellow-500 rounded-2x1 p-4 shadow-md hover:shadow-xl transition-shadow">
     <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-2 text-yellow-300"/>
