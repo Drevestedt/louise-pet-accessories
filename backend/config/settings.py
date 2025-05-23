@@ -152,3 +152,5 @@ CORS_ALLOWED_ORIGINS = [
     # Production
     "https://drevestedt.github.io",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
