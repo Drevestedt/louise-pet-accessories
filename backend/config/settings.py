@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # AWS S3
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = ('louise-pet-store-static')
+AWS_STORAGE_BUCKET_NAME = ('louise-pet-store')
 AWS_S3_REGION_NAME = 'eu-north-1'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
