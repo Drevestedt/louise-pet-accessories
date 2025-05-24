@@ -1,5 +1,7 @@
- import { useState } from "react";
- import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,6 +17,7 @@ function Navbar() {
         <li><Link to="/birds" className="hover:text-orange-700 transition-colors">Birds</Link></li>
         <li><Link to="/fish" className="hover:text-orange-700 transition-colors">Fish</Link></li>
         <li><Link to="/rodents" className="hover:text-orange-700 transition-colors">Rodents</Link></li>
+        <li><Link to="/cart" className="hover:text-orange-700 transition-colors"><FontAwesomeIcon icon={faCartShopping} /></Link></li>
       </ul>
 
       {/* Mobile Hamburger menu */}
