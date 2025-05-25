@@ -10,15 +10,18 @@ function Navbar() {
     <nav className="bg-yellow-500 text-black px-6 py-4 flex justify-between items-center">
       <h1 className="text-xl font-bold hover:text-orange-700 transition-colors"><Link to="/">Louise´s Pet Accessories</Link></h1>
 
-      {/* Desktop menu */}
-      <ul className="hidden lg:flex gap-6">
-        <li><Link to="/dogs" className="hover:text-orange-700 transition-colors">Dogs</Link></li>
-        <li><Link to="/cats" className="hover:text-orange-700 transition-colors">Cats</Link></li>
-        <li><Link to="/birds" className="hover:text-orange-700 transition-colors">Birds</Link></li>
-        <li><Link to="/fish" className="hover:text-orange-700 transition-colors">Fish</Link></li>
-        <li><Link to="/rodents" className="hover:text-orange-700 transition-colors">Rodents</Link></li>
-        <li><Link to="/cart" className="hover:text-orange-700 transition-colors"><FontAwesomeIcon icon={faCartShopping} /></Link></li>
-      </ul>
+      <div className="flex items-center mr-8">
+        {/* Desktop menu */}
+        <ul className="hidden lg:flex gap-6">
+          <li><Link to="/dogs" className="hover:text-orange-700 transition-colors">Dogs</Link></li>
+          <li><Link to="/cats" className="hover:text-orange-700 transition-colors">Cats</Link></li>
+          <li><Link to="/birds" className="hover:text-orange-700 transition-colors">Birds</Link></li>
+          <li><Link to="/fish" className="hover:text-orange-700 transition-colors">Fish</Link></li>
+          <li><Link to="/rodents" className="hover:text-orange-700 transition-colors">Rodents</Link></li>
+        </ul>
+        {/* Shopping Cart */}
+        <Link to="#" className="hover:text-orange-700 transition-colors text-xl ml-12"><FontAwesomeIcon icon={faCartShopping} /></Link>
+      </div>
 
       {/* Mobile Hamburger menu */}
       <button
