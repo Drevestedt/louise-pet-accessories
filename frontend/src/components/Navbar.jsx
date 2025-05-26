@@ -20,7 +20,11 @@ function Navbar() {
           <li><Link to="/rodents" className="hover:text-orange-700 transition-colors">Rodents</Link></li>
         </ul>
         {/* Shopping Cart */}
-        <Link to="#" className="hover:text-orange-700 transition-colors text-xl ml-12"><FontAwesomeIcon icon={faCartShopping} /></Link>
+        <Link to="#" className="relative hover:text-orange-700 transition-colors text-xl ml-12"><FontAwesomeIcon icon={faCartShopping} />
+          { /* Cart item count badge */ }
+          <span className="absolute -top-2 -right-3 bg-orange-700 text-white text-xs rounded-full font-bold px-1.5 py-0.5 ">3</span>
+          { /* Add {cartCount} here later */ }
+        </Link>
       </div>
 
       {/* Mobile Hamburger menu */}
